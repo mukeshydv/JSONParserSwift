@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol JSONParsable: NSObjectProtocol {
+public protocol JSONParsable: NSObjectProtocol {
 	init(dictionary: [String: Any])
 }
 

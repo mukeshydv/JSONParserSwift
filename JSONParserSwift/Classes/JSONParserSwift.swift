@@ -10,7 +10,7 @@ import Foundation
 
 public class JSONParserSwift {
 	
-	static func parse<Type: JSONParsable>(string: String) throws -> Type {
+	public static func parse<Type: JSONParsable>(string: String) throws -> Type {
 		if let data = string.data(using: .utf8) {
 			do {
 				return try parse(data: data)
@@ -22,7 +22,7 @@ public class JSONParserSwift {
 		}
 	}
 	
-	static func parse<Type: JSONParsable>(data: Data) throws -> Type {
+	public static func parse<Type: JSONParsable>(data: Data) throws -> Type {
 		do {
 			let dictionary = try JSONSerialization.jsonObject(with: data, options: .allowFragments)
 			if let dictionary = dictionary as? [String: Any] {
@@ -35,7 +35,7 @@ public class JSONParserSwift {
 		}
 	}
 	
-	static func parse<Type: JSONParsable>(dictionary: [String: Any]) -> Type {
+	public static func parse<Type: JSONParsable>(dictionary: [String: Any]) -> Type {
 		return Type(dictionary: dictionary)
 	}
 	
