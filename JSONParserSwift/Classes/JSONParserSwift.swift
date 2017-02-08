@@ -8,7 +8,7 @@
 
 import Foundation
 
-class JSONParserSwift {
+public class JSONParserSwift {
 	
 	static func parse<Type: JSONParsable>(string: String) throws -> Type {
 		if let data = string.data(using: .utf8) {

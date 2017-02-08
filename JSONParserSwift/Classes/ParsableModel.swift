@@ -12,7 +12,7 @@ protocol JSONParsable: NSObjectProtocol {
 	init(dictionary: [String: Any])
 }
 
-class ParsableModel: NSObject, JSONParsable {
+public class ParsableModel: NSObject, JSONParsable {
 	
 	public required init(dictionary: [String : Any]) {
 		super.init()
