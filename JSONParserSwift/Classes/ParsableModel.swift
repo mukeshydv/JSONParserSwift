@@ -12,7 +12,7 @@ protocol JSONParsable: NSObjectProtocol {
 	init(dictionary: [String: Any])
 }
 
-public class ParsableModel: NSObject, JSONParsable {
+open class ParsableModel: NSObject, JSONParsable {
 	
 	public required init(dictionary: [String : Any]) {
 		super.init()
@@ -84,7 +84,7 @@ public class ParsableModel: NSObject, JSONParsable {
 		return nil
 	}
 	
-	override public func setValue(_ value: Any?, forUndefinedKey key: String) {
+	override open func setValue(_ value: Any?, forUndefinedKey key: String) {
 		print("\nWARNING: The class '\(NSStringFromClass(type(of: self)))' is not key value coding-compliant for the key '\(key)'\n There is no support for optional type, array of optionals or enum properties.\nAs a workaround you can implement the function 'setValue forUndefinedKey' for this.\n")
 	}
 	
