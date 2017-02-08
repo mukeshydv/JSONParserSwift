@@ -7,7 +7,7 @@
 
 Server sends the all JSON data in black & white format i.e its all strings & we make hard efforts to typecast them into their respective datatypes as per our model class.
 
-Now, Is there a magic that comes between the server data and our code & magically converts those strings into the required respective datatypes as per our model classes.
+Now, Is there a magic that comes between the server data and our code magically converts those strings into the required respective datatypes as per our model classes.
 
 
 ## Requirements
