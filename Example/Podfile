@@ -1,0 +1,6 @@
+use_frameworks!
+target 'JSONParserSwift_Tests' do
+  pod 'JSONParserSwift', :path => '../'
+  
+  
+end
