@@ -1,5 +1,6 @@
 language: objective-c
 osx_image: xcode8.0
+xcode_sdk: iphonesimulator10.2
 
 script:
 - xcodebuild clean build test -project Example/JSONParserSwift.xcodeproj -scheme JSONParserSwift-Example
