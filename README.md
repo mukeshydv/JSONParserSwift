@@ -29,15 +29,31 @@ To parse any JSON String or Dictionary to your model you have to create a class 
 If you have to parse following JSON String:
 ```json
 {
-  "employeeId": 1002,
-  "employeeName": "Demo Employee",
-  "employeeEmail": "abc@def.com",
-  "employeeDepartment": "IT"
+  "responseStatus": {
+    "statusCode": 101,
+    "message": "Error Message"
+  },
+  "responseData": {
+    "employeeId": 1002,
+    "employeeName": "Demo Employee",
+    "employeeEmail": "abc@def.com",
+    "employeeDepartment": "IT"
+  }
 }
 ```
-You will need to create model as follows:
+You will need to create models as follows:
 
 ```swift
+class BaseResponse: ParsableModel {
+  var responseStatus: ResponseStatus?
+  var responseData: Employee?
+}
+
+class ResponseStatus: ParsableModel {
+  var statusCode: NSNumber?
+  var message: String?
+}
+
 class Employee: ParsableModel {
   var employeeId: NSNumber?
   var employeeName: String?
@@ -50,10 +66,11 @@ Now to parse the JSON you just need to call following method:
 
 ```swift
 do {
-  let employee: Employee = try JSONParserSwift.parse(string: jsonString)
-  // Use employee object here
+  let employee: BaseResponse = try JSONParserSwift.parse(string: jsonString)
+  // Use base response object here
 } catch {
   print(error)
+}
 ```
 
 The model can have reference to other model's which are subclass of `ParsableModel` or it can have `Array` of models.
