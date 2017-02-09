@@ -2,4 +2,4 @@ language: objective-c
 osx_image: xcode8.0
 
 script:
-- xcodebuild clean build test -project Example/JSONParserSwift.xcodeproj -scheme JSONParserSwift
+- xcodebuild clean build test -project Example/JSONParserSwift.xcodeproj -scheme JSONParserSwift-Example
