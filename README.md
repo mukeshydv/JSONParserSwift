@@ -70,6 +70,7 @@ do {
   // Use base response object here
 } catch {
   print(error)
+}
 ```
 
 The model can have reference to other model's which are subclass of `ParsableModel` or it can have `Array` of models.
