@@ -8,12 +8,19 @@
 
 import Foundation
 
+/// Defines a protocol that must be conform by every model class which can be parsed by `JSONParserSwift`.
 public protocol JSONParsable: NSObjectProtocol {
+	/// This method will be used to initialize the model with the data in dictionary.
+	///
+	/// - Parameter dictionary: `Dictionary` object to be parsed.
 	init(dictionary: [String: Any])
 }
 
 open class ParsableModel: NSObject, JSONParsable {
 	
+	/// This method will be used to initialize the model with the data in dictionary.
+	///
+	/// - Parameter dictionary: `Dictionary` object to be parsed.
 	public required init(dictionary: [String : Any]) {
 		super.init()
 		var mirror: Mirror? = Mirror(reflecting: self)
@@ -84,6 +91,11 @@ open class ParsableModel: NSObject, JSONParsable {
 		return nil
 	}
 	
+	/// This method will be called if your model have some properties which do not support Key-Value coding(KVC). override this method to add your own implementation.
+	///
+	/// - Parameters:
+	///   - value: The value which needs to be initialized in model class.
+	///   - key: key which do not support the KVC.
 	override open func setValue(_ value: Any?, forUndefinedKey key: String) {
 		print("\nWARNING: The class '\(NSStringFromClass(type(of: self)))' is not key value coding-compliant for the key '\(key)'\n There is no support for optional type, array of optionals or enum properties.\nAs a workaround you can implement the function 'setValue forUndefinedKey' for this.\n")
 	}
