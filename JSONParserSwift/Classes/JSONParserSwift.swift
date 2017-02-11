@@ -34,10 +34,13 @@ public class JSONParserSwift {
 		}
 	}
 	
+<<<<<<< HEAD
 	public static func parse<Type: Array>(string: String) throws -> Array {
 		
 	}
 	
+=======
+>>>>>>> 73ffc94237e681de9f349bf0da0c194a788e05d9
 	/// Use this method to parse the `Data` representation of the JSON.
 	///```
 	///	do {
