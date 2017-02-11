@@ -66,7 +66,7 @@ Now to parse the JSON you just need to call following method:
 
 ```swift
 do {
-  let employee: BaseResponse = try JSONParserSwift.parse(string: jsonString)
+  let baseResponse: BaseResponse = try JSONParserSwift.parse(string: jsonString)
   // Use base response object here
 } catch {
   print(error)
