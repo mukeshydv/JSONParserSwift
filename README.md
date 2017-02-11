@@ -5,16 +5,9 @@
 [![License](https://img.shields.io/cocoapods/l/JSONParserSwift.svg?style=flat)](http://cocoapods.org/pods/JSONParserSwift)
 [![Platform](https://img.shields.io/cocoapods/p/JSONParserSwift.svg?style=flat)](http://cocoapods.org/pods/JSONParserSwift)
 
-<<<<<<< HEAD
-## Example
-
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
-=======
 Server sends the all JSON data in black & white format i.e its all strings & we make hard efforts to typecast them into their respective datatypes as per our model class.
 
 Now, Is there a magic that comes between the server data and our code magically converts those strings into the required respective datatypes as per our model classes.
-
->>>>>>> 73ffc94237e681de9f349bf0da0c194a788e05d9
 
 ## Requirements
 
@@ -26,12 +19,7 @@ it, simply add the following line to your Podfile:
 ```ruby
 pod "JSONParserSwift"
 ```
-<<<<<<< HEAD
 
-## Author
-
-mukeshydv, mails4ymukesh@gmail.com
-=======
 ## Implementation
 
 To parse any JSON String or Dictionary to your model you have to create a class and subclass it by `ParsableModel`. Now you will need to create the properties in the model class with same name as their keys in the JSON data.
@@ -92,7 +80,6 @@ The model can have reference to other model's which are subclass of `ParsableMod
 ## Author
 
 Mukesh Yadav, mails4ymukesh@gmail.com
->>>>>>> 73ffc94237e681de9f349bf0da0c194a788e05d9
 
 ## License
 
