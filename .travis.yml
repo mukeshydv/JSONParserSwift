@@ -2,8 +2,8 @@
 # * http://www.objc.io/issue-6/travis-ci.html
 # * https://github.com/supermarin/xcpretty#usage
 
-osx_image: xcode8.0
-xcode_sdk: iphonesimulator10.0
+osx_image: xcode8.2
+xcode_sdk: iphonesimulator10.2
 language: swift
 # cache: cocoapods
 # podfile: Example/Podfile
