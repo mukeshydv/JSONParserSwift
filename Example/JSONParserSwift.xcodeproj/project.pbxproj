@@ -12,8 +12,22 @@
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
+		750B2466A123D58EAE700358 /* Pods_JSONParserSwift_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDC54B9DF871718F9167B994 /* Pods_JSONParserSwift_Tests.framework */; };
 		8B7411631E4F3E5F003F22A1 /* JSONParserSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B7411621E4F3E5F003F22A1 /* JSONParserSwift.framework */; };
+		8B7411751E4F454E003F22A1 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
+		8B7411761E4F456E003F22A1 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 607FACEA1AFB9204008FA782 /* Info.plist */; };
+		AC0CCF2619AD72F18D807B12 /* Pods_JSONParserSwift_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C8A8295094E8E7E16E65D9E /* Pods_JSONParserSwift_Example.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8B7411701E4F4537003F22A1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 607FACC81AFB9204008FA782 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 607FACCF1AFB9204008FA782;
+			remoteInfo = JSONParserSwift_Example;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		1230EA47856F29391D3044EB /* Pods-JSONParserSwift_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JSONParserSwift_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-JSONParserSwift_Tests/Pods-JSONParserSwift_Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -33,6 +47,7 @@
 		7C8A8295094E8E7E16E65D9E /* Pods_JSONParserSwift_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JSONParserSwift_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8971111432F5CEFDA73CC13A /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		8B7411621E4F3E5F003F22A1 /* JSONParserSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JSONParserSwift.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/JSONParserSwift-himgymqlasvxzjbstyikqlefmavs/Build/Products/Debug-iphonesimulator/JSONParserSwift/JSONParserSwift.framework"; sourceTree = "<group>"; };
+		8B74116B1E4F4537003F22A1 /* JSONParserSwift_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JSONParserSwift_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDC54B9DF871718F9167B994 /* Pods_JSONParserSwift_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JSONParserSwift_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D41D02915D4660ED1FFB63A9 /* Pods-JSONParserSwift_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JSONParserSwift_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JSONParserSwift_Example/Pods-JSONParserSwift_Example.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -43,6 +58,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B7411631E4F3E5F003F22A1 /* JSONParserSwift.framework in Frameworks */,
+				AC0CCF2619AD72F18D807B12 /* Pods_JSONParserSwift_Example.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8B7411681E4F4537003F22A1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				750B2466A123D58EAE700358 /* Pods_JSONParserSwift_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				607FACD01AFB9204008FA782 /* JSONParserSwift_Example.app */,
+				8B74116B1E4F4537003F22A1 /* JSONParserSwift_Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -146,9 +171,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "JSONParserSwift_Example" */;
 			buildPhases = (
+				694C91B968F56C3F40FD1DB6 /* [CP] Check Pods Manifest.lock */,
 				607FACCC1AFB9204008FA782 /* Sources */,
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
+				4CCFD9565C1027699D1242A4 /* [CP] Embed Pods Frameworks */,
+				CE1BF9109820F7B0C3D1BC0F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -159,19 +187,45 @@
 			productReference = 607FACD01AFB9204008FA782 /* JSONParserSwift_Example.app */;
 			productType = "com.apple.product-type.application";
 		};
+		8B74116A1E4F4537003F22A1 /* JSONParserSwift_Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8B7411721E4F4537003F22A1 /* Build configuration list for PBXNativeTarget "JSONParserSwift_Tests" */;
+			buildPhases = (
+				EE364226A1EBD5B5F0E49210 /* [CP] Check Pods Manifest.lock */,
+				8B7411671E4F4537003F22A1 /* Sources */,
+				8B7411681E4F4537003F22A1 /* Frameworks */,
+				8B7411691E4F4537003F22A1 /* Resources */,
+				591CA9B53ECDDC57250DD071 /* [CP] Embed Pods Frameworks */,
+				228BB30FD23D046D507740E5 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8B7411711E4F4537003F22A1 /* PBXTargetDependency */,
+			);
+			name = JSONParserSwift_Tests;
+			productName = JSONParserSwift_Tests;
+			productReference = 8B74116B1E4F4537003F22A1 /* JSONParserSwift_Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		607FACC81AFB9204008FA782 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0720;
+				LastSwiftUpdateCheck = 0820;
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = CocoaPods;
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
 						LastSwiftMigration = 0820;
+					};
+					8B74116A1E4F4537003F22A1 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Manual;
+						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
 				};
 			};
@@ -189,6 +243,7 @@
 			projectRoot = "";
 			targets = (
 				607FACCF1AFB9204008FA782 /* JSONParserSwift_Example */,
+				8B74116A1E4F4537003F22A1 /* JSONParserSwift_Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -204,7 +259,108 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8B7411691E4F4537003F22A1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B7411761E4F456E003F22A1 /* Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		228BB30FD23D046D507740E5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JSONParserSwift_Tests/Pods-JSONParserSwift_Tests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4CCFD9565C1027699D1242A4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JSONParserSwift_Example/Pods-JSONParserSwift_Example-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		591CA9B53ECDDC57250DD071 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JSONParserSwift_Tests/Pods-JSONParserSwift_Tests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		694C91B968F56C3F40FD1DB6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		CE1BF9109820F7B0C3D1BC0F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JSONParserSwift_Example/Pods-JSONParserSwift_Example-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EE364226A1EBD5B5F0E49210 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		607FACCC1AFB9204008FA782 /* Sources */ = {
@@ -216,7 +372,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8B7411671E4F4537003F22A1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B7411751E4F454E003F22A1 /* Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8B7411711E4F4537003F22A1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 607FACCF1AFB9204008FA782 /* JSONParserSwift_Example */;
+			targetProxy = 8B7411701E4F4537003F22A1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		607FACD91AFB9204008FA782 /* Main.storyboard */ = {
@@ -348,6 +520,49 @@
 			};
 			name = Release;
 		};
+		8B7411731E4F4537003F22A1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 265B1FA15A0D29237A4DFAC1 /* Pods-JSONParserSwift_Tests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = Tests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.innovationm.JSONParserSwift-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JSONParserSwift_Example.app/JSONParserSwift_Example";
+			};
+			name = Debug;
+		};
+		8B7411741E4F4537003F22A1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1230EA47856F29391D3044EB /* Pods-JSONParserSwift_Tests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = Tests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.innovationm.JSONParserSwift-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JSONParserSwift_Example.app/JSONParserSwift_Example";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -365,6 +580,15 @@
 			buildConfigurations = (
 				607FACF01AFB9204008FA782 /* Debug */,
 				607FACF11AFB9204008FA782 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8B7411721E4F4537003F22A1 /* Build configuration list for PBXNativeTarget "JSONParserSwift_Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8B7411731E4F4537003F22A1 /* Debug */,
+				8B7411741E4F4537003F22A1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
