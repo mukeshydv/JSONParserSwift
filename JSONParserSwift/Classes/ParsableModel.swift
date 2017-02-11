@@ -16,6 +16,7 @@ public protocol JSONParsable: NSObjectProtocol {
 	init(dictionary: [String: Any])
 }
 
+/// Defines a base model which will be super class of every model classes which can be parsed by `JSONParserSwift` framework.
 open class ParsableModel: NSObject, JSONParsable {
 	
 	/// This method will be used to initialize the model with the data in dictionary.
