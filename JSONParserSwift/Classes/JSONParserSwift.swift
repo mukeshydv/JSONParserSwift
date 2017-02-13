@@ -150,7 +150,7 @@ public class JSONParserSwift {
 		do {
 			let array = try JSONSerialization.jsonObject(with: data, options: .allowFragments)
 			if let array = array as? [[String: Any]] {
-				let result: Array<Type> = try parse(array: array)
+				let result: Array<Type> = parse(array: array)
 				return result
 			} else {
 				throw JSONParserSwiftError.cannotParseJsonString
