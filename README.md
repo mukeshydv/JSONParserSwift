@@ -5,9 +5,9 @@
 [![License](https://img.shields.io/cocoapods/l/JSONParserSwift.svg?style=flat)](http://cocoapods.org/pods/JSONParserSwift)
 [![Platform](https://img.shields.io/cocoapods/p/JSONParserSwift.svg?style=flat)](http://cocoapods.org/pods/JSONParserSwift)
 
-Server sends the all JSON data in black & white format i.e its all strings & we make hard efforts to typecast them into their respective datatypes as per our model class.
+Server sends the all JSON data in black and white format i.e. its all strings & we make hard efforts to typecast them into their respective datatypes as per our model class.
 
-Now, Is there a magic that comes between the server data and our code magically converts those strings into the required respective datatypes as per our model classes.
+Now, there's comes `JSONParserSwift` framework between the server data and our code to magically converts those strings into the required respective datatypes as per our model classes without writing any code.
 
 ## Requirements
 
