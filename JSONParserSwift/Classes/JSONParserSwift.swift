@@ -241,7 +241,9 @@ public class JSONParserSwift {
 		var resultingArray: [Any] = []
 		
 		for element in array {
-			resultingArray.append(getValue(value: element))
+			if let elementValue = getValue(value: element) {
+				resultingArray.append(elementValue)
+			}
 		}
 		
 		return resultingArray
@@ -259,21 +261,13 @@ public class JSONParserSwift {
 						repeat {
 							for property in mirror!.children {
 								if let propertyName = property.label {
-									if property.value == nil {
-										dictionary[propertyName] = nil
-									} else {
-										dictionary[propertyName] = getValue(value: property.value)
-									}
+									dictionary[propertyName] = getValue(value: property.value)
 								}
 							}
 							mirror = mirror?.superclassMirror
 						} while mirror != nil
 					} else {
-						if property.value == nil {
-							dictionary[propertyName] = nil
-						} else {
-							dictionary[propertyName] = getValue(value: property.value)
-						}
+						dictionary[propertyName] = getValue(value: property.value)
 					}
 				}
 			}
