@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 s.name             = 'JSONParserSwift'
-s.version          = '0.1.3'
+s.version          = '0.2.4'
 s.summary          = 'Parse your JSON data directly to Swift object.'
 
 s.homepage         = 'https://github.com/mukeshydv/JSONParserSwift'
