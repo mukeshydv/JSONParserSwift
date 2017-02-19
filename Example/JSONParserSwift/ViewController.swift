@@ -36,7 +36,6 @@ class ViewController: UIViewController {
 				let parsedNumbers = try JSONParserSwift.parse(data: data)
 				print(parsedNumbers)
 			}
-			
 		} catch {
 			print(error)
 		}
