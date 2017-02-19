@@ -1,5 +1,5 @@
 //
-//  ParsableModel.swift
+//  JSONParserSwift.swift
 //  Copyright (c) 2017 Mukesh Yadav <mails4ymukesh@gmail.com>
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -216,14 +216,19 @@ public class JSONParserSwift {
 		return resultArray
 	}
 	
+	/// Use this method to convert an object into JSON String.
+	///
+	/// - Parameter object: object which is to be converted into JSON String.
+	/// - Returns: return the JSON String with property name as key.
+	/// - Throws: Throws an erro if any occured.
 	public static func getJSON(object: Any) throws -> String {
 		
 		var objectToParse = object
 		
 		if let arrayObject = object as? Array<Any> {
-			objectToParse = getDictionaryFromArray(array: arrayObject)
+			objectToParse = Serialization.getDictionaryFromArray(array: arrayObject)
 		} else {
-			objectToParse = getDictionaryFromObject(object: object)
+			objectToParse = Serialization.getDictionaryFromObject(object: object)
 		}
 		
 		do {
@@ -237,64 +242,22 @@ public class JSONParserSwift {
 		}
 	}
 	
-	private static func getDictionaryFromArray(array: [Any]) -> [Any] {
-		var resultingArray: [Any] = []
-		
-		for element in array {
-			if let elementValue = getValue(value: element) {
-				resultingArray.append(elementValue)
-			}
-		}
-		
-		return resultingArray
+	/// Use this method to get the `Dictionary` Representation of the object.
+	///
+	/// - Parameter object: source object which needs to be converted into `Dictionary`.
+	/// - Returns: returns the parsed dictionary.
+	public static func getDictionary(object: Any) -> [String: Any] {
+		return Serialization.getDictionaryFromObject(object: object)
 	}
 	
-	private static func getDictionaryFromObject(object: Any) -> [String: Any?] {
-		var dictionary: [String: Any?] = [:]
-		
-		var mirror: Mirror? = Mirror(reflecting: object)
-		repeat {
-			for property in mirror!.children {
-				if let propertyName = property.label {
-					if propertyName == "some" {
-						var mirror: Mirror? = Mirror(reflecting: property.value)
-						repeat {
-							for property in mirror!.children {
-								if let propertyName = property.label {
-									dictionary[propertyName] = getValue(value: property.value)
-								}
-							}
-							mirror = mirror?.superclassMirror
-						} while mirror != nil
-					} else {
-						dictionary[propertyName] = getValue(value: property.value)
-					}
-				}
-			}
-			mirror = mirror?.superclassMirror
-		} while mirror != nil
-		
-		return dictionary
+	/// Use this method to conert an array of objects into an array of dictionaries.
+	///
+	/// - Parameter object: source array which needs to be parsed.
+	/// - Returns: return an array with objects converted into dictionaries.
+	public static func getArray(object: Array<Any>) -> [Any] {
+		return Serialization.getDictionaryFromArray(array: object)
 	}
 	
-	private static func getValue(value: Any) -> Any? {
-		if let stringValue = value as? String {
-			return stringValue
-		} else if let boolValue = value as? Bool {
-			return boolValue
-		} else if let numericValue = value as? NSNumber {
-			return numericValue
-		} else if let arrayValue = value as? Array<Any> {
-			return getDictionaryFromArray(array: arrayValue)
-		} else {
-			let dictionary = getDictionaryFromObject(object: value)
-			if dictionary.count == 0 {
-				return nil
-			} else {
-				return dictionary
-			}
-		}
-	}
 }
 
 enum JSONParserSwiftError: Error {
