@@ -28,16 +28,15 @@ class Serialization {
 		var resultingArray: [Any] = []
 		
 		for element in array {
-			if let elementValue = getValue(value: element) {
-				resultingArray.append(elementValue)
-			}
+			let elementValue = getValue(value: element)
+            resultingArray.append(elementValue)
 		}
 		
 		return resultingArray
 	}
 	
-	static func getDictionaryFromObject(object: Any) -> [String: Any?] {
-		var dictionary: [String: Any?] = [:]
+	static func getDictionaryFromObject(object: Any) -> [String: Any] {
+		var dictionary: [String: Any] = [:]
 		
 		var mirror: Mirror? = Mirror(reflecting: object)
 		repeat {
@@ -64,7 +63,7 @@ class Serialization {
 		return dictionary
 	}
 	
-	private static func getValue(value: Any) -> Any? {
+	private static func getValue(value: Any) -> Any {
 		if let stringValue = value as? String {
 			return stringValue
 		} else if let boolValue = value as? Bool {
@@ -76,7 +75,7 @@ class Serialization {
 		} else {
 			let dictionary = getDictionaryFromObject(object: value)
 			if dictionary.count == 0 {
-				return nil
+				return NSNull()
 			} else {
 				return dictionary
 			}

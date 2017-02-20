@@ -39,6 +39,19 @@ class ViewController: UIViewController {
 		} catch {
 			print(error)
 		}
+        
+        let json = "[{\"number\":12.0045,\"boolValue\":true,\"test\":\"Test data 1\",\"anotherTest\":null,\"array\":null},{\"number\":12.0045,\"boolValue\":true,\"test\":\"Test data 1\",\"anotherTest\":{\"number\":12.0045,\"boolValue\":true,\"test\":\"Test data 1\",\"anotherTest\":null,\"array\":null},\"array\":[{\"number\":12.0045,\"boolValue\":true,\"test\":\"Test data 1\",\"anotherTest\":null,\"array\":null},{\"number\":12.0045,\"boolValue\":true,\"test\":\"Test data 1\",\"anotherTest\":null,\"array\":null}]}]"
+        
+        do {
+            let testModel: [TestModel] = try JSONParserSwift.parse(string: json)
+            
+            let reverseDict = try JSONParserSwift.getJSON(object: testModel)
+            
+            print("Test Passed: \(json == reverseDict)")
+            
+        } catch {
+            print(error)
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -50,5 +63,9 @@ class ViewController: UIViewController {
 
 class TestModel: ParsableModel {
 	var test: String?
+    var number: Double = 0
+    var boolValue: Bool = false
+    var anotherTest: TestModel?
+    var array: [TestModel]?
 }
 

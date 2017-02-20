@@ -224,7 +224,7 @@ public class JSONParserSwift {
 	public static func getJSON(object: Any) throws -> String {
 		
 		var objectToParse = object
-		
+		        
 		if let arrayObject = object as? Array<Any> {
 			objectToParse = Serialization.getDictionaryFromArray(array: arrayObject)
 		} else {
