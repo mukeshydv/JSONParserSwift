@@ -79,7 +79,10 @@ The model can have reference to other model's which are subclass of `ParsableMod
 
 ## Author
 
-Mukesh Yadav, mails4ymukesh@gmail.com
+* [**Mukesh Yadav**](https://github.com/mukeshydv)
+* [**Chanchal Chuahan**](https://github.com/chanchalchauhan)
+
+See also the list of [contributors](https://github.com/mukeshydv/JSONParserSwift/graphs/contributors) who participated in this project.
 
 ## License
 
