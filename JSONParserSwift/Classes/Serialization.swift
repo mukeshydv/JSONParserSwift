@@ -45,15 +45,32 @@ class Serialization {
 					if propertyName == "some" {
 						var mirror: Mirror? = Mirror(reflecting: property.value)
 						repeat {
-							for property in mirror!.children {
-								if let propertyName = property.label {
-									dictionary[propertyName] = getValue(value: property.value)
+							for childProperty in mirror!.children {
+								if let propertyName = childProperty.label {
+                                    if let value = property.value as? JSONKeyCoder {
+                                        if let userDefinedKeyName = value.key(for: propertyName) {
+                                            dictionary[userDefinedKeyName] = getValue(value: childProperty.value)
+                                        } else {
+                                            dictionary[propertyName] = getValue(value: childProperty.value)
+                                        }
+                                    } else {
+                                        dictionary[propertyName] = getValue(value: childProperty.value)
+                                    }
 								}
 							}
 							mirror = mirror?.superclassMirror
 						} while mirror != nil
 					} else {
-						dictionary[propertyName] = getValue(value: property.value)
+                        
+                        if let value = object as? JSONKeyCoder {
+                            if let userDefinedKeyName = value.key(for: propertyName) {
+                                dictionary[userDefinedKeyName] = getValue(value: property.value)
+                            } else {
+                                dictionary[propertyName] = getValue(value: property.value)
+                            }
+                        } else {
+                            dictionary[propertyName] = getValue(value: property.value)
+                        }
 					}
 				}
 			}
@@ -64,13 +81,13 @@ class Serialization {
 	}
 	
 	private static func getValue(value: Any) -> Any {
-		if let stringValue = value as? String {
-			return stringValue
-		} else if let boolValue = value as? Bool {
-			return boolValue
-		} else if let numericValue = value as? NSNumber {
+		if let numericValue = value as? NSNumber {
 			return numericValue
-		} else if let arrayValue = value as? Array<Any> {
+        } else if let boolValue = value as? Bool {
+            return boolValue
+        } else if let stringValue = value as? String {
+            return stringValue
+        } else if let arrayValue = value as? Array<Any> {
 			return getDictionaryFromArray(array: arrayValue)
 		} else {
 			let dictionary = getDictionaryFromObject(object: value)

@@ -48,8 +48,20 @@ open class ParsableModel: NSObject, JSONParsable {
 	}
 	
 	private func initialize(for property: Mirror.Child, dictionary: [String: Any]) {
-		if let propertyName = property.label {
-			if let value = dictionary[propertyName] {
+        
+		if var propertyName = property.label {
+            
+            var keyName = propertyName
+            
+            if let value = self as? JSONKeyCoder {
+                if let propertyName = property.label {
+                    if let userDefinedKeyName = value.key(for: propertyName) {
+                        keyName = userDefinedKeyName
+                    }
+                }
+            }
+            
+			if let value = dictionary[keyName] {
 				
 				if value is NSNull {
 					setValue(nil, forKey: propertyName)

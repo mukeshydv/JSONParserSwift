@@ -22,6 +22,11 @@
 
 import Foundation
 
+public protocol JSONKeyCoder {
+    
+    func key(for key: String) -> String?
+    
+}
 /// This is the helper class defining the multiple methods to parse the different representation of JSON.
 public class JSONParserSwift {
 	
