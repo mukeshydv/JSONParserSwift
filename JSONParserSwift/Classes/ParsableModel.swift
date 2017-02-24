@@ -49,7 +49,7 @@ open class ParsableModel: NSObject, JSONParsable {
 	
 	private func initialize(for property: Mirror.Child, dictionary: [String: Any]) {
         
-		if var propertyName = property.label {
+		if let propertyName = property.label {
             
             var keyName = propertyName
             
