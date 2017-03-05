@@ -1,9 +1,10 @@
 # JSONParserSwift
 
 [![CI Status](http://img.shields.io/travis/mukeshydv/JSONParserSwift.svg?style=flat)](https://travis-ci.org/mukeshydv/JSONParserSwift)
-[![Version](https://img.shields.io/cocoapods/v/JSONParserSwift.svg?style=flat)](http://cocoapods.org/pods/JSONParserSwift)
-[![License](https://img.shields.io/cocoapods/l/JSONParserSwift.svg?style=flat)](http://cocoapods.org/pods/JSONParserSwift)
-[![Platform](https://img.shields.io/cocoapods/p/JSONParserSwift.svg?style=flat)](http://cocoapods.org/pods/JSONParserSwift)
+[![Version](https://img.shields.io/cocoapods/v/JSONParserSwift.svg?style=flat)](http://cocoadocs.org/docsets/JSONParserSwift)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](http://mit-license.org)
+[![Platform](https://img.shields.io/cocoapods/p/JSONParserSwift.svg?style=flat)](http://cocoadocs.org/docsets/JSONParserSwift)
+[![Language](https://img.shields.io/badge/swift-3.0-orange.svg)](https://developer.apple.com/swift)
 
 Server sends the all JSON data in black and white format i.e. its all strings & we make hard efforts to typecast them into their respective datatypes as per our model class.
 
