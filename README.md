@@ -23,7 +23,8 @@ pod "JSONParserSwift"
 
 ## Implementation
 
-To parse any JSON String or Dictionary to your model you have to create a class and subclass it by `ParsableModel`. Now you will need to create the properties in the model class with same name as their keys in the JSON data.
+To parse any JSON String or Dictionary to your model you have to create a class and subclass it by `ParsableModel`. Now you will need to create the properties in the model class. You can create these properties with same name or different name as keys in json string. If you declare properties with same name as key in json then you need to declare only properties. But if you name different then keys then you need to confirm protocol `JSONKeyCoder` and implement method 
+`func key(for key: String) -> String?`
 
 ### Example
 
@@ -73,8 +74,41 @@ do {
   print(error)
 }
 ```
-
 The model can have reference to other model's which are subclass of `ParsableModel` or it can have `Array` of models.
+
+If you want to convert the model object into JSON string then call following method:
+
+```swift
+do {
+    let testModel: TestDataModel = try JSONParserSwift.parse(string: json)
+    let jsonString = try JSONParserSwift.getJSON(object: testModel)
+    print("Json String : \(jsonString)")
+} catch {
+    print(error)
+}
+```
+
+If you have different keys and properties name then call given method:
+
+```swift
+class TestModel: ParsableModel, JSONKeyCoder {
+    public func key(for key: String) -> String? {
+        switch key {
+        case "boolValue":   // Properties name
+            return "bool_value"     // Key in response
+        case "anotherTest":
+            return "another_key"
+        default:
+            return nil
+        }
+    }
+    var test: String?
+    var number: Double = 0
+    var boolValue: Bool = false
+    var anotherTest: TestModel?
+    var array: [TestModel]?
+}
+```
 
 **Note:** Currently this version do not support Optionals with Int and Array of Optional types. So prefer to use NSNumber for number related datas.
 
