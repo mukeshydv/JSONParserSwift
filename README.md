@@ -1,4 +1,4 @@
-[Json_Parser_Image](https://github.com/greenSyntax/JSONParserSwift/blob/master/json_parser.jpg)
+![Json_Parser_Image](https://github.com/greenSyntax/JSONParserSwift/blob/master/json_parser.jpg)
 
 # JSONParserSwift
 
