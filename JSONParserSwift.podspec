@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 s.name             = 'JSONParserSwift'
-s.version          = '0.2.6'
+s.version          = '0.3.6'
 s.summary          = 'Parse your JSON data directly to Swift object.'
 
 s.homepage         = 'https://github.com/mukeshydv/JSONParserSwift'
@@ -14,7 +14,7 @@ s.ios.deployment_target = "8.0"
 s.watchos.deployment_target = "2.0"
 s.tvos.deployment_target = "9.0"
 
-s.source_files = 'JSONParserSwift/Classes/**/*'
+s.source_files = 'JSONParserSwift/Source/**/*'
 
 s.pod_target_xcconfig =  {
 	'SWIFT_VERSION' => '3.0',
