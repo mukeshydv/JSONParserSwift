@@ -1,7 +1,5 @@
 ![Json_Parser_Image](https://github.com/greenSyntax/JSONParserSwift/blob/master/json_parser.jpg)
 
-# JSONParserSwift
-
 [![CI Status](http://img.shields.io/travis/mukeshydv/JSONParserSwift.svg?style=flat)](https://travis-ci.org/mukeshydv/JSONParserSwift)
 [![Version](https://img.shields.io/cocoapods/v/JSONParserSwift.svg?style=flat)](http://cocoadocs.org/docsets/JSONParserSwift)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](http://mit-license.org)
