@@ -23,7 +23,7 @@ pod "JSONParserSwift"
 
 ## Implementation
 
-To parse any JSON String or Dictionary to your model you have to create a class and subclass it by `ParsableModel`. Now you will need to create the properties in the model class. You can create these properties with same name or different name as keys in json string. If you declare properties with same name as key in json then you need to declare only properties. But if you name different then keys then you need to confirm protocol `JSONKeyCoder` and implement method 
+To parse any JSON String or Dictionary to your model you have to create a class and subclass it by `ParsableModel`. Now you will need to create the properties in the model class. You can create these properties with same name or different name as keys in json string. If you declare properties with same name as key in json then you need to declare only properties. But if you want to have different names for properties and keys then you need to conform protocol `JSONKeyCoder` and implement method 
 `func key(for key: String) -> String?`
 
 ### Example
@@ -76,10 +76,21 @@ do {
 ```
 The model can have reference to other model's which are subclass of `ParsableModel` or it can have `Array` of models.
 
-If you have different keys and properties name then Confirm protocol JSONKeyCoder and implements its method func as given below:
+### Get JSON String from Object
+
+To get the JSON string from an object you just have to call `JSONParserSwift.getJSON(object: NSObject)` method to get the JSON.
+
+If you want to have different keys and properties name then Conform to protocol `JSONKeyCoder` and implement its method `key(for key: String) -> String?` as given below:
 
 ```swift
-class TestModel: ParsableModel, JSONKeyCoder {
+class TestModel: JSONKeyCoder {
+
+    var test: String?
+    var number: Double = 0
+    var boolValue: Bool = false
+    var anotherTest: TestModel?
+    var array: [TestModel]?
+    
     public func key(for key: String) -> String? {
         switch key {
         case "boolValue":   // Properties name
@@ -90,24 +101,27 @@ class TestModel: ParsableModel, JSONKeyCoder {
             return nil
         }
     }
-    var test: String?
-    var number: Double = 0
-    var boolValue: Bool = false
-    var anotherTest: TestModel?
-    var array: [TestModel]?
 }
 ```
 
 If you want to convert the model object into JSON string then call method getJSON as given below:
 
 ```swift
-do {
-    // Prepare Test Model
-    let testModel: TestModel = TestModel()
-    testModel.test = "xyz"
-    testModel.number = 10.0
-    testModel.boolValue = true
+// Prepare Test Model
+let testModel: TestModel = TestModel()
+testModel.test = "xyz"
+testModel.number = 10.0
+testModel.boolValue = true
     
+let anotherTestModel = TestModel()
+anotherTestModel.test = "abc"
+anotherTestModel.number = 23
+anotherTestModel.boolValue = false
+    
+testModel.anotherTest = anotherTestModel
+testModel.array = [anotherTestModel]
+
+do {
     // Convert into json string
     let jsonString = try JSONParserSwift.getJSON(object: testModel)
     print("Json String : \(jsonString)")
@@ -115,9 +129,31 @@ do {
     print(error)
 }
 ```
-The json string for the following code will be 
-```
-"{\"bool_value\":true,\"number\":10,\"test\":\"xyz\",\"array\":null,\"another_key\":null}"
+
+The JSON string for the above code will be:
+
+```json
+{
+  "bool_value":true,
+  "number":10,
+  "test":"xyz",
+  "array":[
+    {
+      "bool_value":false,
+      "number":23,
+      "test":"abc",
+      "array": null,
+      "another_key": null
+    }
+  ],
+  "another_key": {
+    "bool_value":false,
+    "number":23,
+    "test":"abc",
+    "array": null,
+    "another_key": null
+  }
+ }
 ```
 
 **Note:** Currently this version do not support Optionals with Int and Array of Optional types. So prefer to use NSNumber for number related datas.
