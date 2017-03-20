@@ -76,19 +76,7 @@ do {
 ```
 The model can have reference to other model's which are subclass of `ParsableModel` or it can have `Array` of models.
 
-If you want to convert the model object into JSON string then call following method:
-
-```swift
-do {
-    let testModel: TestDataModel = try JSONParserSwift.parse(string: json)
-    let jsonString = try JSONParserSwift.getJSON(object: testModel)
-    print("Json String : \(jsonString)")
-} catch {
-    print(error)
-}
-```
-
-If you have different keys and properties name then call given method:
+If you have different keys and properties name then Confirm protocol JSONKeyCoder and implements its method func as given below:
 
 ```swift
 class TestModel: ParsableModel, JSONKeyCoder {
@@ -110,12 +98,34 @@ class TestModel: ParsableModel, JSONKeyCoder {
 }
 ```
 
+If you want to convert the model object into JSON string then call method getJSON as given below:
+
+```swift
+do {
+    // Prepare Test Model
+    let testModel: TestModel = TestModel()
+    testModel.test = "xyz"
+    testModel.number = 10.0
+    testModel.boolValue = true
+    
+    // Convert into json string
+    let jsonString = try JSONParserSwift.getJSON(object: testModel)
+    print("Json String : \(jsonString)")
+} catch {
+    print(error)
+}
+```
+The json string for the following code will be 
+```
+"{\"bool_value\":true,\"number\":10,\"test\":\"xyz\",\"array\":null,\"another_key\":null}"
+```
+
 **Note:** Currently this version do not support Optionals with Int and Array of Optional types. So prefer to use NSNumber for number related datas.
 
 ## Author
 
 * [**Mukesh Yadav**](https://github.com/mukeshydv)
-* [**Chanchal Chuahan**](https://github.com/chanchalchauhan)
+* [**Chanchal Chauhan**](https://github.com/chanchalchauhan)
 
 See also the list of [contributors](https://github.com/mukeshydv/JSONParserSwift/graphs/contributors) who participated in this project.
 
