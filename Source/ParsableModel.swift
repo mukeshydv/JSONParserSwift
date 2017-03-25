@@ -89,9 +89,11 @@ open class ParsableModel: NSObject, JSONParsable {
 			if value is String {
 				setValue(value, forKey: propertyName)
 			} else if let numberValue = value as? NSNumber {
-				setValue(numberValue.description, forKey: propertyName)
-			} else if let boolValue = value as? Bool {
-				setValue(boolValue.description, forKey: propertyName)
+				if numberValue.isBool {
+					setValue(numberValue.boolValue.description, forKey: propertyName)
+				} else {
+					setValue(numberValue.description, forKey: propertyName)
+				}
 			} else if let object = value as? NSObjectProtocol {
 				setValue(object.description, forKey: propertyName)
 			}
@@ -153,4 +155,20 @@ open class ParsableModel: NSObject, JSONParsable {
 		print("\nWARNING: The class '\(NSStringFromClass(type(of: self)))' is not key value coding-compliant for the key '\(key)'\n There is no support for optional type, array of optionals or enum properties.\nAs a workaround you can implement the function 'setValue forUndefinedKey' for this.\n")
 	}
 	
+}
+
+private let trueNumber = NSNumber(value: true)
+private let falseNumber = NSNumber(value: false)
+private let trueObjCType = String(cString: trueNumber.objCType)
+private let falseObjCType = String(cString: falseNumber.objCType)
+
+extension NSNumber {
+	var isBool: Bool {
+		let objCType = String(cString: self.objCType)
+		if (self.compare(trueNumber) == .orderedSame && objCType == trueObjCType) || (self.compare(falseNumber) == .orderedSame && objCType == falseObjCType) {
+			return true
+		} else {
+			return false
+		}
+	}
 }
