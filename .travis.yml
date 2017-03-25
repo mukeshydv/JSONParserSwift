@@ -10,6 +10,5 @@ language: swift
 # - gem install cocoapods # Since Travis is not always on latest version
 # - pod install --project-directory=Example
 script:
-- set -o pipefail
-- xcodebuild -workspace JSONParserSwift.xcworkspace -scheme 'Parser Example' -destination 'platform=iOS Simulator,name=iPhone 6,OS=9.3' build-for-testing test | xcpretty
+- set -o pipefail & xcodebuild -workspace JSONParserSwift.xcworkspace -scheme "Parser Example" -destination 'platform=iOS Simulator,name=iPhone 6,OS=9.3' build-for-testing test | xcpretty
 - pod lib lint
