@@ -6,8 +6,8 @@
 //
 //
 
-//import PackageDescription
+import PackageDescription
 
-//let package = Package(
-//	name: "JSONParserSwift"
-//)
+let package = Package(
+	name: "JSONParserSwift"
+)
