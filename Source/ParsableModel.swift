@@ -76,10 +76,27 @@ open class ParsableModel: NSObject, JSONParsable {
 						let parsedArray = parse(property: property, array: arrayValue)
 						setValue(parsedArray, forKey: propertyName)
 					} else {
-						setValue(value, forKey: propertyName)
+						setValue(value, on: property, forKey: propertyName)
 					}
 				}
 			}
+		}
+	}
+	
+	private func setValue(_ value: Any, on property: Mirror.Child, forKey propertyName: String) {
+		
+		if getClassType(value: property.value) == "String" {
+			if value is String {
+				setValue(value, forKey: propertyName)
+			} else if let numberValue = value as? NSNumber {
+				setValue(numberValue.description, forKey: propertyName)
+			} else if let boolValue = value as? Bool {
+				setValue(boolValue.description, forKey: propertyName)
+			} else if let object = value as? NSObjectProtocol {
+				setValue(object.description, forKey: propertyName)
+			}
+		} else {
+			setValue(value, forKey: propertyName)
 		}
 	}
 	
@@ -116,6 +133,15 @@ open class ParsableModel: NSObject, JSONParsable {
 			return dynamicClass
 		}
 		return nil
+	}
+	
+	private func getClassType(value: Any) -> String {
+		var dynamicType = String(describing: type(of: value))
+		dynamicType = dynamicType.replacingOccurrences(of: "Optional<", with: "")
+		dynamicType = dynamicType.replacingOccurrences(of: "Array<", with: "")
+		dynamicType = dynamicType.replacingOccurrences(of: ">", with: "")
+		
+		return dynamicType
 	}
 	
 	/// This method will be called if your model have some properties which do not support Key-Value coding(KVC). override this method to add your own implementation.

@@ -15,7 +15,7 @@ class ViewController: UIViewController {
 		"{\"test\": \"Test Data 1\"}," +
 		"{\"test\": \"Test Data 2\"}," +
 		"{\"test\": \"Test Data 3\"}," +
-		"{\"test\": \"Test Data 4\"}" +
+		"{\"test\": 1.004}" +
 	"]"
 	
 	let arrayOfNumbers = "[101, 102, 103, 104]"
