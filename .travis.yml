@@ -5,11 +5,11 @@
 osx_image: xcode8.2
 xcode_sdk: iphonesimulator10.2
 language: swift
+sudo: required
 # podfile: Example/Podfile
 # before_install:
 # - gem install cocoapods # Since Travis is not always on latest version
 # - pod install --project-directory=Example
 script:
-- pod install --project-directory=Example
-- set -o pipefail && xcodebuild -workspace Example/JSONParserSwift.xcworkspace -scheme JSONParserSwift-Example -destination 'platform=iOS Simulator,name=iPhone 6,OS=9.3' build-for-testing test | xcpretty
+- set -o pipefail & xcodebuild -workspace JSONParserSwift.xcworkspace -scheme "Parser Example" -destination 'platform=iOS Simulator,name=iPhone 6,OS=9.3' build-for-testing test | xcpretty
 - pod lib lint
