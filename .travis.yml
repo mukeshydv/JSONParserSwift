@@ -5,6 +5,7 @@
 osx_image: xcode8.2
 xcode_sdk: iphonesimulator10.2
 language: swift
+sudo: required
 # podfile: Example/Podfile
 # before_install:
 # - gem install cocoapods # Since Travis is not always on latest version
