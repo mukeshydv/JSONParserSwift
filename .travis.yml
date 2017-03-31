@@ -11,5 +11,5 @@ sudo: required
 # - gem install cocoapods # Since Travis is not always on latest version
 # - pod install --project-directory=Example
 script:
-- set -o pipefail & xcodebuild -workspace JSONParserSwift.xcworkspace -scheme JSONParserSwift -destination 'platform=iOS Simulator,name=iPhone 6,OS=9.3' | xcpretty
+- set -o pipefail & xcodebuild -workspace JSONParserSwift.xcworkspace -scheme JSONParserSwift -destination 'platform=iOS Simulator,name=iPhone 6,OS=10.2' | xcpretty
 - pod lib lint
