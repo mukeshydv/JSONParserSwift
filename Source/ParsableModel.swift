@@ -131,6 +131,8 @@ open class ParsableModel: NSObject, JSONParsable {
 			dynamicType = name + "." + dynamicType
 		}
 		
+		dynamicType = dynamicType.replacingOccurrences(of: " ", with: "_")
+		
 		if let dynamicClass = NSClassFromString(dynamicType) as? JSONParsable.Type {
 			return dynamicClass
 		}

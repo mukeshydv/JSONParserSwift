@@ -1,4 +1,4 @@
-![Json_Parser_Image](https://github.com/greenSyntax/JSONParserSwift/blob/master/json_parser.jpg)
+![Json_Parser_Image](json_parser.png)
 
 [![CI Status](http://img.shields.io/travis/mukeshydv/JSONParserSwift.svg?style=flat)](https://travis-ci.org/mukeshydv/JSONParserSwift)
 [![Version](https://img.shields.io/cocoapods/v/JSONParserSwift.svg?style=flat)](http://cocoadocs.org/docsets/JSONParserSwift)
