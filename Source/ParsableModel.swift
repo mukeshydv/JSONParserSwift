@@ -64,7 +64,8 @@ open class ParsableModel: NSObject, JSONParsable {
             if let value = dictionary[keyName] {
                 
                 if value is NSNull {
-                    setValue(nil, forKey: propertyName)
+                    // Do nothing, leave default value.
+//                    setValue(nil, forKey: propertyName)
                 } else {
                     if let dictionaryValue = value as? [String: Any] {
                         
