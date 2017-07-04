@@ -13,3 +13,5 @@ sudo: required
 script:
 - xcodebuild -workspace JSONParserSwift.xcworkspace -scheme JSONParserSwift -destination 'platform=iOS Simulator,name=iPhone 6,OS=10.2' clean build
 - pod lib lint
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
