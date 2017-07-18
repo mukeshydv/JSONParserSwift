@@ -168,7 +168,7 @@ public class JSONParserSwift {
 	public static func parse<Type: ParsableModel>(data: Data) throws -> Array<Type> {
 		do {
 			let array = try JSONSerialization.jsonObject(with: data, options: .allowFragments)
-			if let array = array as? [[String: Any]] {
+			if let array = array as? [[String: Any]?] {
 				let result: Array<Type> = parse(array: array)
 				return result
 			} else {
@@ -210,12 +210,14 @@ public class JSONParserSwift {
 	///
 	/// - Parameter array: array represenatation of the JSON.
 	/// - Returns: Returns the parsed object array.
-	public static func parse<Type: ParsableModel>(array: [[String: Any]]) -> Array<Type> {
+	public static func parse<Type: ParsableModel>(array: [[String: Any]?]) -> Array<Type> {
 		var resultArray = [Type]()
 		if (array.count > 0) {
 			for element in array {
-				let parsedObject: Type = JSONParserSwift.parse(dictionary: element)
-				resultArray.append(parsedObject)
+                if let element = element {
+                    let parsedObject: Type = JSONParserSwift.parse(dictionary: element)
+                    resultArray.append(parsedObject)
+                }
 			}
 		}
 		return resultArray

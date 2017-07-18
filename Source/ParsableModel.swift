@@ -113,7 +113,7 @@ open class ParsableModel: NSObject, JSONParsable {
                     resultingArray.append(dynamicObject)
                 }
                 
-            } else {
+            } else if type(of: element) != NSNull.self {
                 resultingArray.append(element)
             }
         }
