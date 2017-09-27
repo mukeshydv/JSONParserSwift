@@ -31,6 +31,7 @@ public protocol JSONParsable: NSObjectProtocol {
 }
 
 /// Defines a base model which will be super class of every model classes which can be parsed by `JSONParserSwift` framework.
+@objcMembers
 open class ParsableModel: NSObject, JSONParsable {
     
     /// This method will be used to initialize the model with the data in dictionary.
@@ -86,7 +87,7 @@ open class ParsableModel: NSObject, JSONParsable {
     
     private func setValue(_ value: Any, on property: Mirror.Child, forKey propertyName: String) {
         
-        if getClassType(value: property.value) == "String" {
+        if getClassType(value: property.value) == "Swift.String" {
             if value is String {
                 setValue(value, forKey: propertyName)
             } else if let numberValue = value as? NSNumber {
@@ -122,15 +123,7 @@ open class ParsableModel: NSObject, JSONParsable {
     }
     
     private func getDynamicClassType(value: Any) -> JSONParsable.Type? {
-        var dynamicType = String(describing: type(of: value))
-        dynamicType = dynamicType.replacingOccurrences(of: "Optional<", with: "")
-        dynamicType = dynamicType.replacingOccurrences(of: "Array<", with: "")
-        dynamicType = dynamicType.replacingOccurrences(of: ">", with: "")
-        
-        let bundle = Bundle(for: type(of: self))
-        if let name = bundle.infoDictionary?[kCFBundleNameKey as String] as? String {
-            dynamicType = name + "." + dynamicType
-        }
+        var dynamicType = getClassType(value: value)
         
         dynamicType = dynamicType.replacingOccurrences(of: " ", with: "_")
         dynamicType = dynamicType.replacingOccurrences(of: "-", with: "_")
@@ -142,9 +135,10 @@ open class ParsableModel: NSObject, JSONParsable {
     }
     
     private func getClassType(value: Any) -> String {
-        var dynamicType = String(describing: type(of: value))
-        dynamicType = dynamicType.replacingOccurrences(of: "Optional<", with: "")
-        dynamicType = dynamicType.replacingOccurrences(of: "Array<", with: "")
+        var dynamicType = String(reflecting: type(of: value))
+        dynamicType = dynamicType.replacingOccurrences(of: "Swift.Optional<", with: "")
+        dynamicType = dynamicType.replacingOccurrences(of: "Swift.Array<", with: "")
+        dynamicType = dynamicType.replacingOccurrences(of: "Swift.ImplicitlyUnwrappedOptional<", with: "")
         dynamicType = dynamicType.replacingOccurrences(of: ">", with: "")
         
         return dynamicType
