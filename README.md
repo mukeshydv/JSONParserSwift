@@ -4,7 +4,7 @@
 [![Version](https://img.shields.io/cocoapods/v/JSONParserSwift.svg?style=flat)](http://cocoadocs.org/docsets/JSONParserSwift)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](http://mit-license.org)
 [![Platform](https://img.shields.io/cocoapods/p/JSONParserSwift.svg?style=flat)](http://cocoadocs.org/docsets/JSONParserSwift)
-[![Language](https://img.shields.io/badge/swift-3.0-orange.svg)](https://developer.apple.com/swift)
+[![Language](https://img.shields.io/badge/swift-4.0-orange.svg)](https://developer.apple.com/swift)
 
 Server sends the all JSON data in black and white format i.e. its all strings & we make hard efforts to typecast them into their respective datatypes as per our model class.
 
@@ -19,6 +19,12 @@ it, simply add the following line to your Podfile:
 
 ```ruby
 pod "JSONParserSwift"
+```
+### Swift 3 support
+For using the framework on Swift 3 use the branch [swift-3.2](https://github.com/mukeshydv/JSONParserSwift/tree/swift-3.2) or install version `1.1.3` using CocoaPods, use following line in your Podfile:
+
+```ruby
+pod 'JSONParserSwift', '1.1.3'
 ```
 
 ## Implementation
