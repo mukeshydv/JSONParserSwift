@@ -10,6 +10,7 @@
 		3B2BAB3C1FFCD9AA00E88F10 /* JSONParserSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BB1EB3F1E86E897002E6FED /* JSONParserSwift.framework */; };
 		3B2BAB451FFCDA2D00E88F10 /* ParsingTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2BAB441FFCDA2D00E88F10 /* ParsingTest.swift */; };
 		3B2BAB471FFCDB1D00E88F10 /* Resources in Resources */ = {isa = PBXBuildFile; fileRef = 3B2BAB461FFCDB1D00E88F10 /* Resources */; };
+		3B2BAB491FFCE75D00E88F10 /* SerializationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2BAB481FFCE75D00E88F10 /* SerializationTest.swift */; };
 		8BB1EB591E86E979002E6FED /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 8BB1EB541E86E979002E6FED /* .gitkeep */; };
 		8BB1EB5A1E86E979002E6FED /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8BB1EB551E86E979002E6FED /* Info.plist */; };
 		8BB1EB5B1E86E979002E6FED /* JSONParserSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB1EB561E86E979002E6FED /* JSONParserSwift.swift */; };
@@ -32,6 +33,7 @@
 		3B2BAB3B1FFCD9AA00E88F10 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3B2BAB441FFCDA2D00E88F10 /* ParsingTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParsingTest.swift; sourceTree = "<group>"; };
 		3B2BAB461FFCDB1D00E88F10 /* Resources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Resources; sourceTree = "<group>"; };
+		3B2BAB481FFCE75D00E88F10 /* SerializationTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerializationTest.swift; sourceTree = "<group>"; };
 		8BB1EB3F1E86E897002E6FED /* JSONParserSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JSONParserSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BB1EB541E86E979002E6FED /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		8BB1EB551E86E979002E6FED /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				3B2BAB441FFCDA2D00E88F10 /* ParsingTest.swift */,
+				3B2BAB481FFCE75D00E88F10 /* SerializationTest.swift */,
 			);
 			path = TestClasses;
 			sourceTree = "<group>";
@@ -220,6 +223,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B2BAB491FFCE75D00E88F10 /* SerializationTest.swift in Sources */,
 				3B2BAB451FFCDA2D00E88F10 /* ParsingTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
