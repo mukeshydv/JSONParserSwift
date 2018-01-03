@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B2BAB3C1FFCD9AA00E88F10 /* JSONParserSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BB1EB3F1E86E897002E6FED /* JSONParserSwift.framework */; };
+		3B2BAB451FFCDA2D00E88F10 /* ParsingTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2BAB441FFCDA2D00E88F10 /* ParsingTest.swift */; };
+		3B2BAB471FFCDB1D00E88F10 /* Resources in Resources */ = {isa = PBXBuildFile; fileRef = 3B2BAB461FFCDB1D00E88F10 /* Resources */; };
 		8BB1EB591E86E979002E6FED /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 8BB1EB541E86E979002E6FED /* .gitkeep */; };
 		8BB1EB5A1E86E979002E6FED /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8BB1EB551E86E979002E6FED /* Info.plist */; };
 		8BB1EB5B1E86E979002E6FED /* JSONParserSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB1EB561E86E979002E6FED /* JSONParserSwift.swift */; };
@@ -14,7 +17,21 @@
 		8BB1EB5D1E86E979002E6FED /* Serialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB1EB581E86E979002E6FED /* Serialization.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		3B2BAB3D1FFCD9AA00E88F10 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8BB1EB361E86E896002E6FED /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8BB1EB3E1E86E897002E6FED;
+			remoteInfo = JSONParserSwift;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		3B2BAB371FFCD9AA00E88F10 /* JSONParserSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JSONParserSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B2BAB3B1FFCD9AA00E88F10 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3B2BAB441FFCDA2D00E88F10 /* ParsingTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParsingTest.swift; sourceTree = "<group>"; };
+		3B2BAB461FFCDB1D00E88F10 /* Resources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Resources; sourceTree = "<group>"; };
 		8BB1EB3F1E86E897002E6FED /* JSONParserSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JSONParserSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BB1EB541E86E979002E6FED /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		8BB1EB551E86E979002E6FED /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -24,6 +41,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		3B2BAB341FFCD9AA00E88F10 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3B2BAB3C1FFCD9AA00E88F10 /* JSONParserSwift.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8BB1EB3B1E86E897002E6FED /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -34,10 +59,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3B2BAB381FFCD9AA00E88F10 /* JSONParserSwiftTests */ = {
+			isa = PBXGroup;
+			children = (
+				3B2BAB461FFCDB1D00E88F10 /* Resources */,
+				3B2BAB421FFCDA1E00E88F10 /* TestClasses */,
+				3B2BAB3B1FFCD9AA00E88F10 /* Info.plist */,
+			);
+			path = JSONParserSwiftTests;
+			sourceTree = "<group>";
+		};
+		3B2BAB421FFCDA1E00E88F10 /* TestClasses */ = {
+			isa = PBXGroup;
+			children = (
+				3B2BAB441FFCDA2D00E88F10 /* ParsingTest.swift */,
+			);
+			path = TestClasses;
+			sourceTree = "<group>";
+		};
 		8BB1EB351E86E896002E6FED = {
 			isa = PBXGroup;
 			children = (
 				8BB1EB531E86E979002E6FED /* Source */,
+				3B2BAB381FFCD9AA00E88F10 /* JSONParserSwiftTests */,
 				8BB1EB401E86E897002E6FED /* Products */,
 			);
 			sourceTree = "<group>";
@@ -46,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				8BB1EB3F1E86E897002E6FED /* JSONParserSwift.framework */,
+				3B2BAB371FFCD9AA00E88F10 /* JSONParserSwiftTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -75,6 +120,24 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		3B2BAB361FFCD9AA00E88F10 /* JSONParserSwiftTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3B2BAB411FFCD9AA00E88F10 /* Build configuration list for PBXNativeTarget "JSONParserSwiftTests" */;
+			buildPhases = (
+				3B2BAB331FFCD9AA00E88F10 /* Sources */,
+				3B2BAB341FFCD9AA00E88F10 /* Frameworks */,
+				3B2BAB351FFCD9AA00E88F10 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3B2BAB3E1FFCD9AA00E88F10 /* PBXTargetDependency */,
+			);
+			name = JSONParserSwiftTests;
+			productName = JSONParserSwiftTests;
+			productReference = 3B2BAB371FFCD9AA00E88F10 /* JSONParserSwiftTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		8BB1EB3E1E86E897002E6FED /* JSONParserSwift */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8BB1EB471E86E897002E6FED /* Build configuration list for PBXNativeTarget "JSONParserSwift" */;
@@ -99,9 +162,15 @@
 		8BB1EB361E86E896002E6FED /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0900;
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Mukesh Yadav";
 				TargetAttributes = {
+					3B2BAB361FFCD9AA00E88F10 = {
+						CreatedOnToolsVersion = 9.0.1;
+						LastSwiftMigration = 0900;
+						ProvisioningStyle = Automatic;
+					};
 					8BB1EB3E1E86E897002E6FED = {
 						CreatedOnToolsVersion = 8.2.1;
 						ProvisioningStyle = Manual;
@@ -121,11 +190,20 @@
 			projectRoot = "";
 			targets = (
 				8BB1EB3E1E86E897002E6FED /* JSONParserSwift */,
+				3B2BAB361FFCD9AA00E88F10 /* JSONParserSwiftTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		3B2BAB351FFCD9AA00E88F10 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3B2BAB471FFCDB1D00E88F10 /* Resources in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8BB1EB3D1E86E897002E6FED /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -138,6 +216,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		3B2BAB331FFCD9AA00E88F10 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3B2BAB451FFCDA2D00E88F10 /* ParsingTest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8BB1EB3A1E86E897002E6FED /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -150,7 +236,68 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		3B2BAB3E1FFCD9AA00E88F10 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8BB1EB3E1E86E897002E6FED /* JSONParserSwift */;
+			targetProxy = 3B2BAB3D1FFCD9AA00E88F10 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		3B2BAB3F1FFCD9AA00E88F10 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = JSONParserSwiftTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mukesh.test.JSONParserSwiftTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3B2BAB401FFCD9AA00E88F10 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = JSONParserSwiftTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mukesh.test.JSONParserSwiftTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		8BB1EB451E86E897002E6FED /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -293,6 +440,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		3B2BAB411FFCD9AA00E88F10 /* Build configuration list for PBXNativeTarget "JSONParserSwiftTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3B2BAB3F1FFCD9AA00E88F10 /* Debug */,
+				3B2BAB401FFCD9AA00E88F10 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		8BB1EB391E86E896002E6FED /* Build configuration list for PBXProject "JSONParserSwift" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
