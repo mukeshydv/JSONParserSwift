@@ -5,6 +5,7 @@
 [![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](http://mit-license.org)
 [![Platform](https://img.shields.io/cocoapods/p/JSONParserSwift.svg?style=flat)](http://cocoadocs.org/docsets/JSONParserSwift)
 [![Language](https://img.shields.io/badge/swift-4.0-orange.svg)](https://developer.apple.com/swift)
+[![codecov.io](https://codecov.io/gh/mukeshydv/JSONParserSwift/branch/master/graphs/badge.svg)](https://codecov.io/gh/mukeshydv/JSONParserSwift/branch/master)
 
 Server sends the all JSON data in black and white format i.e. its all strings & we make hard efforts to typecast them into their respective datatypes as per our model class.
 
